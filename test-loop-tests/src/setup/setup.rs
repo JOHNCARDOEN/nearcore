@@ -380,6 +380,8 @@ pub fn setup_client(
         runtime_adapter.clone(),
         storage.hot_store,
         storage.cloud_storage.as_ref(),
+        shard_tracker.clone(),
+        epoch_manager.clone(),
     )
     .unwrap();
     let cloud_archival_writer_handle = test_loop.data.register_data(cloud_archival_writer_handle);
